@@ -2,12 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const key = require('./config/keys');
 
-require('./services/passport');
 require('./models/User');
+require('./services/passport');
 
 const app = express();
 
-mongoose.connect(key.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+
+mongoose.connect(key.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true }, (e) => { console.log('=============', e)})
 
 require('./routes/authRoutes')(app);
 
