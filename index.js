@@ -28,6 +28,7 @@ mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: tru
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoute')(app);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
