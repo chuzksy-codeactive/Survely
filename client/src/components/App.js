@@ -8,6 +8,13 @@ import Dashboard from './Dashboard';
 import Landing from './Landing';
 import 'materialize-css/dist/css/materialize.min.css';
 
+const SurveyNew = () => {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h1>Create a New Survey</h1>
+    </div>
+  )
+}
 
 class App extends Component {
   componentDidMount() {
@@ -22,6 +29,7 @@ class App extends Component {
             <Header />
             <Route path="/" exact component={Landing} />
             <Route path="/surveys" exact component={Dashboard} />
+            <Route path="/surveys/new" exact component={SurveyNew} />
           </div>
         </Router>
       </div>
