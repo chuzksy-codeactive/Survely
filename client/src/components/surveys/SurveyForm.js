@@ -1,9 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
 import { reduxForm, Field } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 import SurveyField from './SurveyField';
-import { Link } from 'react-router-dom';
+import validateEmails from '../../utils/validateEmails';
 
 const FIELDS = [
   { label: 'Campaign Title', name: 'title' },
@@ -39,6 +40,8 @@ class SurveyForm extends React.Component {
 
 const validate = (values) => {
   const error = {};
+
+  error.emails = validateEmails(values.emails || '');
 
   _.each(FIELDS, ({ name }) => {
     if (!values[name]) {
