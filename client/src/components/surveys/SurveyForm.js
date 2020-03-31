@@ -40,9 +40,11 @@ class SurveyForm extends React.Component {
 const validate = (values) => {
   const error = {};
 
-  if (!values.title) {
-    error.title = 'You must provide a title';
-  }
+  _.each(FIELDS, ({ name }) => {
+    if (!values[name]) {
+      error[name] = 'You must provide a value'
+    }
+  })
 
   return error
 }
