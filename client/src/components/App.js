@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -7,14 +7,7 @@ import Header from './Header';
 import Dashboard from './Dashboard';
 import Landing from './Landing';
 import 'materialize-css/dist/css/materialize.min.css';
-
-const SurveyNew = () => {
-  return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Create a New Survey</h1>
-    </div>
-  )
-}
+import SurveyNew from './surveys/SurveyNew';
 
 class App extends Component {
   componentDidMount() {
@@ -23,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <Router>
           <div>
             <Header />
@@ -32,7 +25,7 @@ class App extends Component {
             <Route path="/surveys/new" exact component={SurveyNew} />
           </div>
         </Router>
-      </div>
+      </Fragment>
     )
   }
 }
