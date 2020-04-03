@@ -1,0 +1,45 @@
+.landing {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+  grid-column-gap: 20px;
+  height: 80vh;
+}
+
+.landing-right {
+  background: url("../img/preferences.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.buttons {
+  margin-top: auto;
+}
+
+#root {
+  font-family: "Lato", sans-serif;
+}
+
+.landing-left {
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+}
+
+.landing-left h3 {
+  font-weight: 700;
+  font-size: 48px;
+  margin: 0 !important;
+}
+
+.landing-left p {
+  font-weight: 400;
+  font-size: 24px;
+}

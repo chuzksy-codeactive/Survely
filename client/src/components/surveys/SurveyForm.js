@@ -16,7 +16,7 @@ class SurveyForm extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container" style={{ marginTop: "50px" }}>
         <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
           {this.renderFields()}
           <Link to="/surveys" className="red btn-flat white-text">

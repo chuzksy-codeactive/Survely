@@ -1,12 +1,31 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Landing = () => {
+import '../../src/styles/Landing.css';
+import { connect } from 'react-redux';
+
+const Landing = (props) => {
   return (
-    <div style={{ textAlign: "center"}} className="container">
-      <h1>Emaily!</h1>
-      <p>Collect feedback from your users</p>
+    <div className="container main" style={{ marginTop: "50px" }}>
+      <div className="landing">
+        <div className="landing-left">
+          <h3>Get answers with surveys</h3>
+          <p>Be the person with great ideas. Surveys give you actionable insights and fresh perspectives</p>
+
+          <div className="buttons">
+            {props.auth && <Link to="/surveys/new" className="waves-effect waves-light btn-large">Get Started</Link>} &nbsp;
+            {!props.auth && <a href="/auth/google" className="waves-effect waves-light btn-large">Sign up with Google</a>}
+          </div>
+        </div>
+        <div className="landing-right"></div>
+      </div>
     </div>
+
   )
 }
 
-export default Landing;
+const mapStateToProps = ({ auth }) => {
+  return { auth }
+}
+
+export default connect(mapStateToProps)(Landing);
