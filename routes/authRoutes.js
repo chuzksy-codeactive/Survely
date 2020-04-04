@@ -11,16 +11,6 @@ module.exports = (app) => {
       res.redirect("/surveys");
     });
 
-  app.get('/auth/facebook', passport.authenticate('facebook', {
-    scope: ['user_friends', 'manage_pages']
-  }));
-
-  app.get('/auth/facebook/callback',
-    passport.authenticate('facebook'), 
-    (req, res) => {
-      res.redirect('/surveys')
-    });
-
   app.get('/api/current_user', (req, res) => {
     res.send(req.user);
   });
