@@ -5,6 +5,8 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   googleId: String,
   facebookId: String,
+  twitterId: String,
+  githubId: String,
   credits: {
     type: Number,
     default: 0

@@ -16,9 +16,10 @@ const Landing = (props) => {
             {props.auth && <Link to="/surveys/new" className="waves-effect waves-light btn-large">Get Started</Link>} &nbsp;
             {!props.auth && <><a href="/auth/google" className="waves-effect  red lighten-3 btn-large">Sign up with Google</a>
               <span>OR</span>
-              <a href="/auth/facebook"><i id="facebook" class="fa fa-facebook-square" aria-hidden="true"></i></a>
-              <i class="fa fa-github-square" aria-hidden="true">
-              </i> <i class="fa fa-twitter-square" aria-hidden="true"></i></>
+              <a href="/auth/facebook"><i id="facebook" className="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;</a>
+              {/* <a href="#"><i className="fa fa-twitter-square" aria-hidden="true"></i> &nbsp;</a> */}
+              {/* <a href="/auth/github"><i className="fa fa-github-square" aria-hidden="true"></i> &nbsp;</a> */}
+            </>
             }
           </div>
         </div>
