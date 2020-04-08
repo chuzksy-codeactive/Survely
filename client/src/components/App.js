@@ -6,6 +6,8 @@ import * as actions from '../actions';
 import Header from './Header';
 import Dashboard from './Dashboard';
 import Landing from './Landing';
+import Terms from './Terms';
+import Privacy from './Privacy';
 import 'materialize-css/dist/css/materialize.min.css';
 import SurveyNew from './surveys/SurveyNew';
 
@@ -23,6 +25,8 @@ class App extends Component {
             <Route path="/" exact component={Landing} />
             <Route path="/surveys" exact component={Dashboard} />
             <Route path="/surveys/new" exact component={SurveyNew} />
+            <Route path="/privacy" exact component={Privacy} />
+            <Route path="/terms" exact component={Terms} />
           </div>
         </Router>
       </Fragment>
